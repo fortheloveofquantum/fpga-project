@@ -1,0 +1,13 @@
+|multiplexer
+a => z.DATAB
+b => z.DATAB
+c => z.DATAB
+d => z.DATAA
+s1 => process_0.IN0
+s1 => process_0.IN0
+s1 => z.OUTPUTSELECT
+s2 => process_0.IN1
+s2 => process_0.IN1
+z <= z.DB_MAX_OUTPUT_PORT_TYPE
+
+

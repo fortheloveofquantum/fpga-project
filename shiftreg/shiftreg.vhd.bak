@@ -1,0 +1,23 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity shiftreg is 
+	port(
+		clk,clear : in std_logic;
+		d_in: in std_logic;
+		d_out:out std_logic_vector(3 downto 0)
+	);
+end shiftreg;
+
+architecture beh of shiftreg is
+begin
+	process(clk)
+	begin
+		if clear = '1' then
+			d_out <= "0000";
+		elsif rising_edge(clk) then
+			d_out(3 downto 1) <= d_out(2 downto 0);
+			d_out(0) <= d_in;
+		end if;
+	end process;
+end beh;

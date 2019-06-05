@@ -1,0 +1,58 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+entity tb_jk_ff is 
+end tb_jk_ff;
+
+architecture beh of tb_jk_ff is 
+	component jk_ff
+	port(
+		j,k,clk : in std_logic;
+		q, q_bar: out std_logic
+	);
+	end component;
+	
+	--inputs
+	signal j : std_logic := '0';
+	signal k: std_logic := '0';
+	signal clk : std_logic := '0';
+	--outputs
+	signal q : std_logic := '0';
+	signal q_bar : std_logic := '0';
+	
+	constant clk_period : time := 20 ns;
+begin
+	uut: jk_ff port map(
+			j => j,
+			k => k,
+			clk => clk,
+			q => q,
+			q_bar => q_bar
+		);
+		
+	clk_process: process
+	begin
+		clk <= '0';
+		wait for clk_period/2;
+		clk <= '1';
+		wait for clk_period/2;
+	end process;
+	
+		stim_process: process
+	begin 
+		wait for 100 ns;
+		j <= '0';
+		k <= '0';
+		wait for 100 ns;
+		j <= '1';
+		k <= '0';
+		wait for 100 ns;
+		j <= '0';
+		k <= '1';
+		wait for 100 ns;
+		j <= '1';
+		k <= '1';
+		wait for 100 ns;
+		wait;
+	end process;
+end;

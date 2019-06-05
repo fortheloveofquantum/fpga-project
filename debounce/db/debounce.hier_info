@@ -1,0 +1,28 @@
+|debounce
+clk => output~reg0.CLK
+clk => counter_out[0].CLK
+clk => counter_out[1].CLK
+clk => counter_out[2].CLK
+clk => counter_out[3].CLK
+clk => counter_out[4].CLK
+clk => counter_out[5].CLK
+clk => counter_out[6].CLK
+clk => counter_out[7].CLK
+clk => counter_out[8].CLK
+clk => counter_out[9].CLK
+clk => counter_out[10].CLK
+clk => counter_out[11].CLK
+clk => counter_out[12].CLK
+clk => counter_out[13].CLK
+clk => counter_out[14].CLK
+clk => counter_out[15].CLK
+clk => counter_out[16].CLK
+clk => counter_out[17].CLK
+clk => counter_out[18].CLK
+clk => counter_out[19].CLK
+clk => ff[0].CLK
+clk => ff[1].CLK
+input => ff[0].DATAIN
+output <= output~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

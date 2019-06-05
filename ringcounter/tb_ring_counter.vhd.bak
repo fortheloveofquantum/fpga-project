@@ -1,0 +1,12 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+entity tb_ring_counter is
+end tb_ring_counter;
+
+architecture beh of tb_ring_counter is
+	component ring_counter
+	port( clk : in std_logic;
+			reset : in std_logic;
+			q : out std_logic_vector(3 downto 0)
+			);

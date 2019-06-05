@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\mcankaraman\Desktop\fpga\Fpga Project\shiftreg\simulation\modelsim
+Eshiftreg
+Z1 w1558258715
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\mcankaraman\Desktop\fpga\Fpga Project\shiftreg\simulation\modelsim
+Z5 8C:/Users/mcankaraman/Desktop/fpga/Fpga Project/shiftreg/shiftreg.vhd
+Z6 FC:/Users/mcankaraman/Desktop/fpga/Fpga Project/shiftreg/shiftreg.vhd
+l0
+L4
+VVNU9Fg_>IYU:enV4=61Bk0
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1558259086.455000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/mcankaraman/Desktop/fpga/Fpga Project/shiftreg/shiftreg.vhd|
+Z10 !s107 C:/Users/mcankaraman/Desktop/fpga/Fpga Project/shiftreg/shiftreg.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 iVoW9O]:S9LETaKMMNMlm0
+!i10b 1
+Abeh
+R2
+R3
+DEx4 work 8 shiftreg 0 22 VNU9Fg_>IYU:enV4=61Bk0
+l14
+L12
+V0ceMFJ8<]6?;iSMC;@<^O2
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 Q<El@0Ll7@0lEIiIcjE3m0
+!i10b 1
+Etb_shiftreg
+Z13 w1558258872
+R2
+R3
+R4
+Z14 8C:/Users/mcankaraman/Desktop/fpga/Fpga Project/shiftreg/tb_shifreg.vhd
+Z15 FC:/Users/mcankaraman/Desktop/fpga/Fpga Project/shiftreg/tb_shifreg.vhd
+l0
+L4
+VDe;_;XDVIGjRUn<BBS?dX3
+!s100 RQSmnCX__4HABj7bC3_d]2
+R7
+31
+!i10b 1
+Z16 !s108 1558259086.564000
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/mcankaraman/Desktop/fpga/Fpga Project/shiftreg/tb_shifreg.vhd|
+Z18 !s107 C:/Users/mcankaraman/Desktop/fpga/Fpga Project/shiftreg/tb_shifreg.vhd|
+R11
+R12
+Abeh
+R2
+R3
+DEx4 work 11 tb_shiftreg 0 22 De;_;XDVIGjRUn<BBS?dX3
+l23
+L7
+VfFfTIi6NOlY;Wb[Bzkji72
+!s100 Z5DOITTkVzK9ZZGmzR3_g1
+R7
+31
+!i10b 1
+R16
+R17
+R18
+R11
+R12

@@ -1,0 +1,14 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity test_mux is
+end test_mux;
+
+architecture beh of test_mux is 
+	component multiplexer
+	port(
+		a,b,c,d : in std_logic;
+		s1,s2	  : in std_logic;
+		z 		  : out std_logic
+	);
+	end component;

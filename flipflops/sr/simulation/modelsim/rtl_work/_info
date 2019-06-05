@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\mcankaraman\Desktop\fpga\Fpga Project\flipflops\sr\simulation\modelsim
+Esr_ff
+Z1 w1554635848
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dC:\Users\mcankaraman\Desktop\fpga\Fpga Project\flipflops\sr\simulation\modelsim
+Z7 8C:/Users/mcankaraman/Desktop/fpga/Fpga Project/flipflops/sr/sr_ff.vhd
+Z8 FC:/Users/mcankaraman/Desktop/fpga/Fpga Project/flipflops/sr/sr_ff.vhd
+l0
+L6
+VC52W4WLj4NaY;V6gnRT3C2
+Z9 OV;C;10.1d;51
+31
+Z10 !s108 1554639118.441000
+Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/mcankaraman/Desktop/fpga/Fpga Project/flipflops/sr/sr_ff.vhd|
+Z12 !s107 C:/Users/mcankaraman/Desktop/fpga/Fpga Project/flipflops/sr/sr_ff.vhd|
+Z13 o-93 -work work -O0
+Z14 tExplicit 1
+!s100 EEN]^YZP^?iaPMH6iST921
+!i10b 1
+Abeh
+R2
+R3
+R4
+R5
+DEx4 work 5 sr_ff 0 22 C52W4WLj4NaY;V6gnRT3C2
+l14
+L13
+VXJWV@c3TA``KhSXOLW8oc3
+R9
+31
+R10
+R11
+R12
+R13
+R14
+!s100 8ARm`mI^0g0Z03VSCF9ab0
+!i10b 1
+Etb_sr_ff
+Z15 w1554636583
+R4
+R5
+R6
+Z16 8C:/Users/mcankaraman/Desktop/fpga/Fpga Project/flipflops/sr/tb_sr_ff.vhd
+Z17 FC:/Users/mcankaraman/Desktop/fpga/Fpga Project/flipflops/sr/tb_sr_ff.vhd
+l0
+L4
+Vj>=@eWM0FOY6Xzlok^YhK0
+!s100 3^cnnFcOboaZ6hcl:AkcL2
+R9
+31
+!i10b 1
+Z18 !s108 1554639118.550000
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/mcankaraman/Desktop/fpga/Fpga Project/flipflops/sr/tb_sr_ff.vhd|
+Z20 !s107 C:/Users/mcankaraman/Desktop/fpga/Fpga Project/flipflops/sr/tb_sr_ff.vhd|
+R13
+R14
+Abeh
+R4
+R5
+DEx4 work 8 tb_sr_ff 0 22 j>=@eWM0FOY6Xzlok^YhK0
+l24
+L7
+V[24;C?R^iJWWf<e27_6N`1
+!s100 K:g[HYklTXMM?]Vn=GGf^3
+R9
+31
+!i10b 1
+R18
+R19
+R20
+R13
+R14

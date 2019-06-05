@@ -1,0 +1,50 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+entity tb_d_ff is 
+end tb_d_ff;
+
+architecture beh of tb_d_ff is 
+	component d_ff
+	port(
+		d,clk : in std_logic;
+		q : out std_logic
+	);
+	end component;
+	
+	--inputs
+	signal d : std_logic := '0';
+	signal clk : std_logic := '0';
+	--outputs
+	signal q : std_logic;
+	
+	constant clk_period : time := 20 ns;
+begin
+	uut: d_ff port map(
+			d => d,
+			clk => clk,
+			q => q
+		);
+		
+	clk_process: process
+	begin
+		clk <= '0';
+		wait for clk_period/2;
+		clk <= '1';
+		wait for clk_period/2;
+	end process;
+	
+		stim_process: process
+	begin 
+		wait for 100 ns;
+		d <= '1';
+		wait for 100 ns;
+		d <= '0';
+		wait for 100 ns;
+		d <= '1';
+		wait for 100 ns;
+		d <= '0';
+		wait for 100 ns;
+		wait;
+	end process;
+end;

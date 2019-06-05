@@ -1,0 +1,1406 @@
+TimeQuest Timing Analyzer report for counterdb
+Mon May 20 10:55:02 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Setup: 'debounce:counter_btn|output'
+ 13. Slow Model Hold: 'clk'
+ 14. Slow Model Hold: 'debounce:counter_btn|output'
+ 15. Slow Model Minimum Pulse Width: 'clk'
+ 16. Slow Model Minimum Pulse Width: 'debounce:counter_btn|output'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Fast Model Setup Summary
+ 22. Fast Model Hold Summary
+ 23. Fast Model Recovery Summary
+ 24. Fast Model Removal Summary
+ 25. Fast Model Minimum Pulse Width Summary
+ 26. Fast Model Setup: 'clk'
+ 27. Fast Model Setup: 'debounce:counter_btn|output'
+ 28. Fast Model Hold: 'clk'
+ 29. Fast Model Hold: 'debounce:counter_btn|output'
+ 30. Fast Model Minimum Pulse Width: 'clk'
+ 31. Fast Model Minimum Pulse Width: 'debounce:counter_btn|output'
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Multicorner Timing Analysis Summary
+ 37. Setup Times
+ 38. Hold Times
+ 39. Clock to Output Times
+ 40. Minimum Clock to Output Times
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; counterdb                                                         ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                   ;
++-----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------+
+; Clock Name                  ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                         ;
++-----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------+
+; clk                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                         ;
+; debounce:counter_btn|output ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { debounce:counter_btn|output } ;
++-----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                            ;
++------------+-----------------+-----------------------------+-------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                  ; Note                                                  ;
++------------+-----------------+-----------------------------+-------------------------------------------------------+
+; 252.14 MHz ; 252.14 MHz      ; clk                         ;                                                       ;
+; 456.41 MHz ; 450.05 MHz      ; debounce:counter_btn|output ; limit due to high minimum pulse width violation (tch) ;
++------------+-----------------+-----------------------------+-------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------------------------+
+; Slow Model Setup Summary                             ;
++-----------------------------+--------+---------------+
+; Clock                       ; Slack  ; End Point TNS ;
++-----------------------------+--------+---------------+
+; clk                         ; -2.966 ; -48.030       ;
+; debounce:counter_btn|output ; -1.191 ; -6.203        ;
++-----------------------------+--------+---------------+
+
+
++------------------------------------------------------+
+; Slow Model Hold Summary                              ;
++-----------------------------+--------+---------------+
+; Clock                       ; Slack  ; End Point TNS ;
++-----------------------------+--------+---------------+
+; clk                         ; -2.689 ; -2.689        ;
+; debounce:counter_btn|output ; 0.445  ; 0.000         ;
++-----------------------------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++------------------------------------------------------+
+; Slow Model Minimum Pulse Width Summary               ;
++-----------------------------+--------+---------------+
+; Clock                       ; Slack  ; End Point TNS ;
++-----------------------------+--------+---------------+
+; clk                         ; -1.631 ; -29.737       ;
+; debounce:counter_btn|output ; -0.611 ; -9.776        ;
++-----------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                    ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.966 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.003      ; 4.007      ;
+; -2.901 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.942      ;
+; -2.818 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.859      ;
+; -2.753 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.794      ;
+; -2.737 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.778      ;
+; -2.730 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.771      ;
+; -2.713 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.754      ;
+; -2.678 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.719      ;
+; -2.672 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.713      ;
+; -2.665 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.706      ;
+; -2.617 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.658      ;
+; -2.615 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.655      ;
+; -2.567 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.608      ;
+; -2.565 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.606      ;
+; -2.552 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.593      ;
+; -2.549 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.590      ;
+; -2.530 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.571      ;
+; -2.518 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.559      ;
+; -2.517 ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[1]  ; clk          ; clk         ; 1.000        ; -0.003     ; 3.552      ;
+; -2.502 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.543      ;
+; -2.491 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.532      ;
+; -2.484 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.525      ;
+; -2.477 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.518      ;
+; -2.467 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.507      ;
+; -2.454 ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[1]  ; clk          ; clk         ; 1.000        ; -0.003     ; 3.489      ;
+; -2.449 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.490      ;
+; -2.442 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.483      ;
+; -2.426 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.467      ;
+; -2.412 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.453      ;
+; -2.403 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.443      ;
+; -2.401 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[9]  ; clk          ; clk         ; 1.000        ; 0.001      ; 3.440      ;
+; -2.401 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.442      ;
+; -2.393 ; debounce:counter_btn|counter_out[9]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.433      ;
+; -2.386 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.426      ;
+; -2.379 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.419      ;
+; -2.370 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.411      ;
+; -2.364 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.405      ;
+; -2.347 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.388      ;
+; -2.336 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[9]  ; clk          ; clk         ; 1.000        ; 0.001      ; 3.375      ;
+; -2.329 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.370      ;
+; -2.328 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[11] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.369      ;
+; -2.320 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.361      ;
+; -2.314 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.355      ;
+; -2.313 ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.354      ;
+; -2.313 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.354      ;
+; -2.304 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.342      ;
+; -2.289 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.330      ;
+; -2.282 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.323      ;
+; -2.279 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.320      ;
+; -2.266 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.306      ;
+; -2.263 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[11] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.304      ;
+; -2.255 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.295      ;
+; -2.252 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[13] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.293      ;
+; -2.245 ; debounce:counter_btn|counter_out[9]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.285      ;
+; -2.239 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.277      ;
+; -2.238 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.279      ;
+; -2.223 ; debounce:counter_btn|counter_out[10] ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.261      ;
+; -2.216 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.256      ;
+; -2.203 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.244      ;
+; -2.200 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.241      ;
+; -2.198 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.236      ;
+; -2.187 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[13] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.228      ;
+; -2.174 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.214      ;
+; -2.169 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.210      ;
+; -2.167 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.207      ;
+; -2.165 ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.206      ;
+; -2.164 ; debounce:counter_btn|counter_out[9]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.204      ;
+; -2.159 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.200      ;
+; -2.157 ; debounce:counter_btn|counter_out[9]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.197      ;
+; -2.150 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.191      ;
+; -2.148 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[9]  ; clk          ; clk         ; 1.000        ; 0.001      ; 3.187      ;
+; -2.145 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.183      ;
+; -2.142 ; debounce:counter_btn|counter_out[11] ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.180      ;
+; -2.142 ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[1]  ; clk          ; clk         ; 1.000        ; -0.003     ; 3.177      ;
+; -2.140 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.180      ;
+; -2.124 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.165      ;
+; -2.119 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.160      ;
+; -2.113 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[9]  ; clk          ; clk         ; 1.000        ; 0.001      ; 3.152      ;
+; -2.084 ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.125      ;
+; -2.080 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.118      ;
+; -2.077 ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.118      ;
+; -2.075 ; debounce:counter_btn|counter_out[10] ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.113      ;
+; -2.075 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[11] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.116      ;
+; -2.074 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.115      ;
+; -2.061 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.101      ;
+; -2.054 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.094      ;
+; -2.051 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.089      ;
+; -2.050 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.088      ;
+; -2.044 ; debounce:counter_btn|counter_out[9]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.084      ;
+; -2.043 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.084      ;
+; -2.040 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[11] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.081      ;
+; -2.037 ; debounce:counter_btn|counter_out[12] ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.075      ;
+; -2.016 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.054      ;
+; -2.004 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.044      ;
+; -2.000 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[8]  ; clk          ; clk         ; 1.000        ; 0.001      ; 3.039      ;
+; -1.999 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[13] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.040      ;
+; -1.995 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.003      ; 3.036      ;
+; -1.994 ; debounce:counter_btn|counter_out[11] ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.032      ;
+; -1.994 ; debounce:counter_btn|counter_out[10] ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.032      ;
+; -1.994 ; debounce:counter_btn|counter_out[9]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.034      ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'debounce:counter_btn|output'                                                                                                                         ;
++--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; Slack  ; From Node                   ; To Node                     ; Launch Clock                ; Latch Clock                 ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; -1.191 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 2.229      ;
+; -1.149 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 2.187      ;
+; -1.111 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 2.149      ;
+; -1.069 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 2.107      ;
+; -1.031 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 2.069      ;
+; -1.016 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 2.054      ;
+; -0.989 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 2.027      ;
+; -0.951 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.989      ;
+; -0.936 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.974      ;
+; -0.909 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.947      ;
+; -0.892 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.930      ;
+; -0.871 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.909      ;
+; -0.857 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.895      ;
+; -0.856 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.894      ;
+; -0.829 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.867      ;
+; -0.812 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.850      ;
+; -0.791 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[2] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.829      ;
+; -0.777 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.815      ;
+; -0.776 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.814      ;
+; -0.749 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[2] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.787      ;
+; -0.732 ; counter:counter|data_tmp[5] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.770      ;
+; -0.732 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.770      ;
+; -0.697 ; counter:counter|data_tmp[6] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.735      ;
+; -0.697 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.735      ;
+; -0.696 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.734      ;
+; -0.652 ; counter:counter|data_tmp[5] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.690      ;
+; -0.652 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.690      ;
+; -0.264 ; counter:counter|data_tmp[6] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.302      ;
+; -0.264 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.302      ;
+; -0.263 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[2] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.301      ;
+; -0.257 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[1] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.295      ;
+; -0.220 ; counter:counter|data_tmp[5] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.258      ;
+; -0.220 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.258      ;
+; -0.216 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[1] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 1.254      ;
+; 0.132  ; counter:counter|data_tmp[7] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.906      ;
+; 0.307  ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[0] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.731      ;
++--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                    ;
++--------+--------------------------------------+--------------------------------------+-----------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                              ; Launch Clock                ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+--------------------------------------+-----------------------------+-------------+--------------+------------+------------+
+; -2.689 ; debounce:counter_btn|output          ; debounce:counter_btn|output          ; debounce:counter_btn|output ; clk         ; 0.000        ; 2.857      ; 0.731      ;
+; -2.189 ; debounce:counter_btn|output          ; debounce:counter_btn|output          ; debounce:counter_btn|output ; clk         ; -0.500       ; 2.857      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[0]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[2]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[3]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[4]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[5]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[6]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[7]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[8]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[9]  ; debounce:counter_btn|counter_out[9]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[10] ; debounce:counter_btn|counter_out[10] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[11] ; debounce:counter_btn|counter_out[11] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[12] ; debounce:counter_btn|counter_out[12] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[13] ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[14] ; debounce:counter_btn|counter_out[14] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[15] ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[16] ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[17] ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[18] ; debounce:counter_btn|counter_out[18] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.643  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|ff[1]           ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.929      ;
+; 1.140  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[10] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.426      ;
+; 1.141  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[12] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.427      ;
+; 1.452  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[10] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.738      ;
+; 1.453  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[12] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.739      ;
+; 1.487  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[11] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.773      ;
+; 1.491  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[14] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.777      ;
+; 1.515  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[10] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.801      ;
+; 1.516  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[12] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.802      ;
+; 1.530  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.816      ;
+; 1.542  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.828      ;
+; 1.684  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[9]  ; clk                         ; clk         ; 0.000        ; -0.002     ; 1.968      ;
+; 1.750  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[18] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.036      ;
+; 1.751  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.037      ;
+; 1.751  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.037      ;
+; 1.751  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.037      ;
+; 1.752  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.038      ;
+; 1.799  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[11] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.085      ;
+; 1.803  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[14] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.089      ;
+; 1.862  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[11] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.148      ;
+; 1.866  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[14] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.152      ;
+; 1.868  ; debounce:counter_btn|counter_out[18] ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.154      ;
+; 1.907  ; debounce:counter_btn|counter_out[15] ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.193      ;
+; 1.957  ; debounce:counter_btn|counter_out[13] ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.243      ;
+; 1.996  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[9]  ; clk                         ; clk         ; 0.000        ; -0.002     ; 2.280      ;
+; 2.006  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|output          ; clk                         ; clk         ; 0.000        ; -0.010     ; 2.282      ;
+; 2.027  ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[1]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.313      ;
+; 2.030  ; debounce:counter_btn|counter_out[16] ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.316      ;
+; 2.036  ; debounce:counter_btn|counter_out[13] ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.322      ;
+; 2.049  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[7]  ; clk                         ; clk         ; 0.000        ; -0.003     ; 2.332      ;
+; 2.049  ; debounce:counter_btn|counter_out[17] ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.335      ;
+; 2.050  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[0]  ; clk                         ; clk         ; 0.000        ; -0.003     ; 2.333      ;
+; 2.050  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[4]  ; clk                         ; clk         ; 0.000        ; -0.003     ; 2.333      ;
+; 2.050  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[5]  ; clk                         ; clk         ; 0.000        ; -0.003     ; 2.333      ;
+; 2.051  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[2]  ; clk                         ; clk         ; 0.000        ; -0.003     ; 2.334      ;
+; 2.052  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[3]  ; clk                         ; clk         ; 0.000        ; -0.003     ; 2.335      ;
+; 2.059  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[9]  ; clk                         ; clk         ; 0.000        ; -0.002     ; 2.343      ;
+; 2.070  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[6]  ; clk                         ; clk         ; 0.000        ; -0.002     ; 2.354      ;
+; 2.070  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[8]  ; clk                         ; clk         ; 0.000        ; -0.002     ; 2.354      ;
+; 2.071  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[18] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.357      ;
+; 2.072  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.358      ;
+; 2.072  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.358      ;
+; 2.072  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.358      ;
+; 2.073  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.359      ;
+; 2.075  ; debounce:counter_btn|counter_out[12] ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.361      ;
+; 2.099  ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[8]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 2.386      ;
+; 2.101  ; debounce:counter_btn|counter_out[14] ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.387      ;
+; 2.112  ; debounce:counter_btn|counter_out[13] ; debounce:counter_btn|counter_out[14] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.398      ;
+; 2.118  ; debounce:counter_btn|counter_out[16] ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.404      ;
+; 2.126  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[18] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.412      ;
+; 2.127  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.413      ;
+; 2.127  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.413      ;
+; 2.127  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.413      ;
+; 2.128  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.414      ;
+; 2.138  ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[6]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 2.425      ;
+; 2.146  ; debounce:counter_btn|counter_out[15] ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.432      ;
+; 2.169  ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[6]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 2.456      ;
+; 2.180  ; debounce:counter_btn|counter_out[14] ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.466      ;
+; 2.180  ; debounce:counter_btn|counter_out[11] ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.466      ;
+; 2.197  ; debounce:counter_btn|counter_out[17] ; debounce:counter_btn|counter_out[18] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.483      ;
+; 2.234  ; debounce:counter_btn|counter_out[15] ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.520      ;
+; 2.235  ; debounce:counter_btn|counter_out[12] ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.521      ;
+; 2.261  ; debounce:counter_btn|counter_out[10] ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.547      ;
+; 2.266  ; debounce:counter_btn|counter_out[16] ; debounce:counter_btn|counter_out[18] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.552      ;
+; 2.275  ; debounce:counter_btn|counter_out[13] ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.561      ;
+; 2.298  ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[6]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 2.585      ;
+; 2.303  ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[4]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.589      ;
+; 2.304  ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[8]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 2.591      ;
+; 2.314  ; debounce:counter_btn|counter_out[12] ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.600      ;
+; 2.333  ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[6]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 2.620      ;
+; 2.335  ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[8]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 2.622      ;
+; 2.337  ; debounce:counter_btn|counter_out[10] ; debounce:counter_btn|counter_out[11] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.623      ;
+; 2.338  ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[4]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.624      ;
+; 2.340  ; debounce:counter_btn|counter_out[11] ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.626      ;
+; 2.343  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|output          ; clk                         ; clk         ; 0.000        ; -0.010     ; 2.619      ;
+; 2.351  ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.003      ; 2.640      ;
+; 2.363  ; debounce:counter_btn|counter_out[13] ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.649      ;
+; 2.366  ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[2]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 2.652      ;
+; 2.370  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[7]  ; clk                         ; clk         ; 0.000        ; -0.003     ; 2.653      ;
++--------+--------------------------------------+--------------------------------------+-----------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'debounce:counter_btn|output'                                                                                                                         ;
++-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; Slack ; From Node                   ; To Node                     ; Launch Clock                ; Latch Clock                 ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; 0.445 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[0] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.731      ;
+; 0.620 ; counter:counter|data_tmp[7] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.906      ;
+; 0.968 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[1] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.254      ;
+; 0.972 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.258      ;
+; 0.972 ; counter:counter|data_tmp[5] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.258      ;
+; 1.009 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[1] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.295      ;
+; 1.015 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[2] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.301      ;
+; 1.016 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.302      ;
+; 1.016 ; counter:counter|data_tmp[6] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.302      ;
+; 1.404 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.690      ;
+; 1.404 ; counter:counter|data_tmp[5] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.690      ;
+; 1.448 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.734      ;
+; 1.449 ; counter:counter|data_tmp[6] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.735      ;
+; 1.449 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.735      ;
+; 1.484 ; counter:counter|data_tmp[5] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.770      ;
+; 1.484 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.770      ;
+; 1.501 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[2] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.787      ;
+; 1.528 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.814      ;
+; 1.529 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.815      ;
+; 1.543 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[2] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.829      ;
+; 1.564 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.850      ;
+; 1.581 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.867      ;
+; 1.608 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.894      ;
+; 1.609 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.895      ;
+; 1.623 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.909      ;
+; 1.644 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.930      ;
+; 1.661 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.947      ;
+; 1.688 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.974      ;
+; 1.703 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 1.989      ;
+; 1.741 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 2.027      ;
+; 1.768 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 2.054      ;
+; 1.783 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 2.069      ;
+; 1.821 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 2.107      ;
+; 1.863 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 2.149      ;
+; 1.901 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 2.187      ;
+; 1.943 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 2.229      ;
++-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                               ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[10] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[10] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[11] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[11] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[12] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[12] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[13] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[13] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[14] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[14] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[15] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[15] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[16] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[16] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[17] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[17] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[18] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[18] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[19] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[19] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[8]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[8]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[9]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[9]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|ff[0]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|ff[0]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|ff[1]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|ff[1]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|output          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|output          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[10]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[10]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[11]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[11]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[12]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[12]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[13]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[13]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[14]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[14]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[15]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[15]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[16]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[16]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[17]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[17]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[18]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[18]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[19]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[19]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[4]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[4]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[5]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[5]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[6]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[6]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[7]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[7]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[8]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[8]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[9]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[9]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|ff[0]|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|ff[0]|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|ff[1]|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|ff[1]|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|output|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|output|clk               ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'debounce:counter_btn|output'                                                                              ;
++--------+--------------+----------------+------------------+-----------------------------+------------+-------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                       ; Clock Edge ; Target                              ;
++--------+--------------+----------------+------------------+-----------------------------+------------+-------------------------------------+
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[0]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[0]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[1]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[1]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[2]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[2]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[3]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[3]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[4]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[4]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[5]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[5]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[6]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[6]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[7]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[7]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter_btn|output|regout           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter_btn|output|regout           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter_btn|output~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter_btn|output~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter_btn|output~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter_btn|output~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[4]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[4]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[5]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[5]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[6]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[6]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[7]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[7]|clk             ;
++--------+--------------+----------------+------------------+-----------------------------+------------+-------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; btn       ; clk        ; 4.209 ; 4.209 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; btn       ; clk        ; -3.961 ; -3.961 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                              ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+; Data Port ; Clock Port                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference             ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+; data[*]   ; debounce:counter_btn|output ; 6.873 ; 6.873 ; Rise       ; debounce:counter_btn|output ;
+;  data[0]  ; debounce:counter_btn|output ; 6.873 ; 6.873 ; Rise       ; debounce:counter_btn|output ;
+;  data[1]  ; debounce:counter_btn|output ; 6.845 ; 6.845 ; Rise       ; debounce:counter_btn|output ;
+;  data[2]  ; debounce:counter_btn|output ; 6.504 ; 6.504 ; Rise       ; debounce:counter_btn|output ;
+;  data[3]  ; debounce:counter_btn|output ; 6.199 ; 6.199 ; Rise       ; debounce:counter_btn|output ;
+;  data[4]  ; debounce:counter_btn|output ; 6.644 ; 6.644 ; Rise       ; debounce:counter_btn|output ;
+;  data[5]  ; debounce:counter_btn|output ; 6.193 ; 6.193 ; Rise       ; debounce:counter_btn|output ;
+;  data[6]  ; debounce:counter_btn|output ; 6.190 ; 6.190 ; Rise       ; debounce:counter_btn|output ;
+;  data[7]  ; debounce:counter_btn|output ; 6.681 ; 6.681 ; Rise       ; debounce:counter_btn|output ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                      ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+; Data Port ; Clock Port                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference             ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+; data[*]   ; debounce:counter_btn|output ; 6.190 ; 6.190 ; Rise       ; debounce:counter_btn|output ;
+;  data[0]  ; debounce:counter_btn|output ; 6.873 ; 6.873 ; Rise       ; debounce:counter_btn|output ;
+;  data[1]  ; debounce:counter_btn|output ; 6.845 ; 6.845 ; Rise       ; debounce:counter_btn|output ;
+;  data[2]  ; debounce:counter_btn|output ; 6.504 ; 6.504 ; Rise       ; debounce:counter_btn|output ;
+;  data[3]  ; debounce:counter_btn|output ; 6.199 ; 6.199 ; Rise       ; debounce:counter_btn|output ;
+;  data[4]  ; debounce:counter_btn|output ; 6.644 ; 6.644 ; Rise       ; debounce:counter_btn|output ;
+;  data[5]  ; debounce:counter_btn|output ; 6.193 ; 6.193 ; Rise       ; debounce:counter_btn|output ;
+;  data[6]  ; debounce:counter_btn|output ; 6.190 ; 6.190 ; Rise       ; debounce:counter_btn|output ;
+;  data[7]  ; debounce:counter_btn|output ; 6.681 ; 6.681 ; Rise       ; debounce:counter_btn|output ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+
+
++------------------------------------------------------+
+; Fast Model Setup Summary                             ;
++-----------------------------+--------+---------------+
+; Clock                       ; Slack  ; End Point TNS ;
++-----------------------------+--------+---------------+
+; clk                         ; -0.622 ; -6.198        ;
+; debounce:counter_btn|output ; 0.144  ; 0.000         ;
++-----------------------------+--------+---------------+
+
+
++------------------------------------------------------+
+; Fast Model Hold Summary                              ;
++-----------------------------+--------+---------------+
+; Clock                       ; Slack  ; End Point TNS ;
++-----------------------------+--------+---------------+
+; clk                         ; -1.718 ; -1.718        ;
+; debounce:counter_btn|output ; 0.215  ; 0.000         ;
++-----------------------------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++------------------------------------------------------+
+; Fast Model Minimum Pulse Width Summary               ;
++-----------------------------+--------+---------------+
+; Clock                       ; Slack  ; End Point TNS ;
++-----------------------------+--------+---------------+
+; clk                         ; -1.380 ; -24.380       ;
+; debounce:counter_btn|output ; -0.500 ; -8.000        ;
++-----------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                    ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.622 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.656      ;
+; -0.585 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.619      ;
+; -0.576 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.610      ;
+; -0.539 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.573      ;
+; -0.515 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.549      ;
+; -0.494 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.528      ;
+; -0.478 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.512      ;
+; -0.474 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.508      ;
+; -0.473 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.507      ;
+; -0.448 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.482      ;
+; -0.436 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.470      ;
+; -0.432 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.465      ;
+; -0.430 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.464      ;
+; -0.428 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.462      ;
+; -0.422 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.456      ;
+; -0.417 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.451      ;
+; -0.408 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.442      ;
+; -0.405 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.439      ;
+; -0.393 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.427      ;
+; -0.387 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.421      ;
+; -0.386 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.419      ;
+; -0.382 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.416      ;
+; -0.380 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.414      ;
+; -0.376 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.410      ;
+; -0.371 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.405      ;
+; -0.368 ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[1]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.398      ;
+; -0.367 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.401      ;
+; -0.361 ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[1]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.391      ;
+; -0.359 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.393      ;
+; -0.354 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.387      ;
+; -0.345 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.379      ;
+; -0.345 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.379      ;
+; -0.325 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[11] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.359      ;
+; -0.325 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.358      ;
+; -0.325 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.359      ;
+; -0.321 ; debounce:counter_btn|counter_out[9]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.354      ;
+; -0.318 ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.352      ;
+; -0.315 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.349      ;
+; -0.314 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[9]  ; clk          ; clk         ; 1.000        ; 0.001      ; 1.347      ;
+; -0.312 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[13] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.346      ;
+; -0.308 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.341      ;
+; -0.302 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.336      ;
+; -0.298 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.332      ;
+; -0.289 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.323      ;
+; -0.288 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[11] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.322      ;
+; -0.283 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.316      ;
+; -0.282 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.316      ;
+; -0.280 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.314      ;
+; -0.277 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[9]  ; clk          ; clk         ; 1.000        ; 0.001      ; 1.310      ;
+; -0.275 ; debounce:counter_btn|counter_out[9]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.308      ;
+; -0.275 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[13] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.309      ;
+; -0.273 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.307      ;
+; -0.272 ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.306      ;
+; -0.269 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.303      ;
+; -0.260 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.292      ;
+; -0.260 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.294      ;
+; -0.256 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.290      ;
+; -0.254 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.288      ;
+; -0.247 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.280      ;
+; -0.244 ; debounce:counter_btn|counter_out[10] ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.276      ;
+; -0.240 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.273      ;
+; -0.236 ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[1]  ; clk          ; clk         ; 1.000        ; -0.002     ; 1.266      ;
+; -0.234 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.268      ;
+; -0.230 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.264      ;
+; -0.227 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.260      ;
+; -0.223 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.255      ;
+; -0.220 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.252      ;
+; -0.218 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.251      ;
+; -0.217 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.251      ;
+; -0.214 ; debounce:counter_btn|counter_out[9]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.247      ;
+; -0.213 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.247      ;
+; -0.211 ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.245      ;
+; -0.208 ; debounce:counter_btn|counter_out[11] ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.240      ;
+; -0.208 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.242      ;
+; -0.205 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.238      ;
+; -0.200 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.234      ;
+; -0.198 ; debounce:counter_btn|counter_out[10] ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.230      ;
+; -0.197 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[11] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.231      ;
+; -0.192 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.225      ;
+; -0.191 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.223      ;
+; -0.191 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.225      ;
+; -0.186 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[9]  ; clk          ; clk         ; 1.000        ; 0.001      ; 1.219      ;
+; -0.184 ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[13] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.218      ;
+; -0.182 ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.216      ;
+; -0.180 ; debounce:counter_btn|counter_out[12] ; debounce:counter_btn|counter_out[18] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.212      ;
+; -0.177 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[11] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.211      ;
+; -0.172 ; debounce:counter_btn|counter_out[9]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.205      ;
+; -0.169 ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[12] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.203      ;
+; -0.166 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[9]  ; clk          ; clk         ; 1.000        ; 0.001      ; 1.199      ;
+; -0.165 ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[15] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.199      ;
+; -0.164 ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[8]  ; clk          ; clk         ; 1.000        ; 0.001      ; 1.197      ;
+; -0.164 ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[13] ; clk          ; clk         ; 1.000        ; 0.002      ; 1.198      ;
+; -0.162 ; debounce:counter_btn|counter_out[11] ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.194      ;
+; -0.162 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[14] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.195      ;
+; -0.154 ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.186      ;
+; -0.149 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[16] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.182      ;
+; -0.140 ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[10] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.173      ;
+; -0.137 ; debounce:counter_btn|counter_out[10] ; debounce:counter_btn|counter_out[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.169      ;
+; -0.135 ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[11] ; clk          ; clk         ; 1.000        ; 0.001      ; 1.168      ;
+; -0.134 ; debounce:counter_btn|counter_out[12] ; debounce:counter_btn|counter_out[19] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.166      ;
++--------+--------------------------------------+--------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'debounce:counter_btn|output'                                                                                                                        ;
++-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; Slack ; From Node                   ; To Node                     ; Launch Clock                ; Latch Clock                 ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; 0.144 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.888      ;
+; 0.156 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.876      ;
+; 0.179 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.853      ;
+; 0.191 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.841      ;
+; 0.214 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.818      ;
+; 0.226 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.806      ;
+; 0.229 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.803      ;
+; 0.249 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.783      ;
+; 0.261 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.771      ;
+; 0.264 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.768      ;
+; 0.279 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.753      ;
+; 0.284 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.748      ;
+; 0.296 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.736      ;
+; 0.299 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.733      ;
+; 0.299 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.733      ;
+; 0.314 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.718      ;
+; 0.319 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[2] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.713      ;
+; 0.331 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[2] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.701      ;
+; 0.334 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.698      ;
+; 0.334 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.698      ;
+; 0.349 ; counter:counter|data_tmp[5] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.683      ;
+; 0.349 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.683      ;
+; 0.368 ; counter:counter|data_tmp[6] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.664      ;
+; 0.369 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.663      ;
+; 0.369 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.663      ;
+; 0.384 ; counter:counter|data_tmp[5] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.648      ;
+; 0.384 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.648      ;
+; 0.508 ; counter:counter|data_tmp[6] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.524      ;
+; 0.509 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.523      ;
+; 0.509 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[2] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.523      ;
+; 0.513 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[1] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.519      ;
+; 0.521 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[1] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.511      ;
+; 0.522 ; counter:counter|data_tmp[5] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.510      ;
+; 0.522 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.510      ;
+; 0.642 ; counter:counter|data_tmp[7] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.390      ;
+; 0.665 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[0] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 1.000        ; 0.000      ; 0.367      ;
++-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                    ;
++--------+--------------------------------------+--------------------------------------+-----------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                              ; Launch Clock                ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+--------------------------------------+-----------------------------+-------------+--------------+------------+------------+
+; -1.718 ; debounce:counter_btn|output          ; debounce:counter_btn|output          ; debounce:counter_btn|output ; clk         ; 0.000        ; 1.792      ; 0.367      ;
+; -1.218 ; debounce:counter_btn|output          ; debounce:counter_btn|output          ; debounce:counter_btn|output ; clk         ; -0.500       ; 1.792      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[0]  ; debounce:counter_btn|counter_out[0]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[2]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[3]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[4]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[5]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[6]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[7]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[8]  ; debounce:counter_btn|counter_out[8]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[9]  ; debounce:counter_btn|counter_out[9]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[10] ; debounce:counter_btn|counter_out[10] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[11] ; debounce:counter_btn|counter_out[11] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[12] ; debounce:counter_btn|counter_out[12] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[13] ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[14] ; debounce:counter_btn|counter_out[14] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[15] ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[16] ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[17] ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[18] ; debounce:counter_btn|counter_out[18] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.250  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|ff[1]           ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.429  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[10] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.581      ;
+; 0.430  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[12] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.582      ;
+; 0.550  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[11] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.702      ;
+; 0.553  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[14] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.705      ;
+; 0.554  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[10] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.706      ;
+; 0.555  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[12] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.707      ;
+; 0.556  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.708      ;
+; 0.561  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[10] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.713      ;
+; 0.562  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[12] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.714      ;
+; 0.578  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.730      ;
+; 0.646  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[9]  ; clk                         ; clk         ; 0.000        ; -0.001     ; 0.797      ;
+; 0.646  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[18] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.798      ;
+; 0.647  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.799      ;
+; 0.648  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.800      ;
+; 0.648  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.800      ;
+; 0.648  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.800      ;
+; 0.660  ; debounce:counter_btn|counter_out[18] ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.812      ;
+; 0.674  ; debounce:counter_btn|counter_out[15] ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.826      ;
+; 0.675  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[11] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.827      ;
+; 0.678  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[14] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.830      ;
+; 0.682  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[11] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.834      ;
+; 0.685  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[14] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.837      ;
+; 0.701  ; debounce:counter_btn|counter_out[13] ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.853      ;
+; 0.726  ; debounce:counter_btn|counter_out[16] ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.878      ;
+; 0.736  ; debounce:counter_btn|counter_out[13] ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.888      ;
+; 0.740  ; debounce:counter_btn|counter_out[7]  ; debounce:counter_btn|counter_out[8]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 0.893      ;
+; 0.744  ; debounce:counter_btn|counter_out[14] ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.896      ;
+; 0.749  ; debounce:counter_btn|counter_out[13] ; debounce:counter_btn|counter_out[14] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.901      ;
+; 0.750  ; debounce:counter_btn|counter_out[12] ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.902      ;
+; 0.750  ; debounce:counter_btn|counter_out[17] ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.902      ;
+; 0.755  ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[6]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 0.908      ;
+; 0.765  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|output          ; clk                         ; clk         ; 0.000        ; -0.009     ; 0.908      ;
+; 0.768  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[6]  ; clk                         ; clk         ; 0.000        ; -0.001     ; 0.919      ;
+; 0.769  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[8]  ; clk                         ; clk         ; 0.000        ; -0.001     ; 0.920      ;
+; 0.770  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[0]  ; clk                         ; clk         ; 0.000        ; -0.002     ; 0.920      ;
+; 0.770  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[5]  ; clk                         ; clk         ; 0.000        ; -0.002     ; 0.920      ;
+; 0.770  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[7]  ; clk                         ; clk         ; 0.000        ; -0.002     ; 0.920      ;
+; 0.771  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[2]  ; clk                         ; clk         ; 0.000        ; -0.002     ; 0.921      ;
+; 0.771  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[4]  ; clk                         ; clk         ; 0.000        ; -0.002     ; 0.921      ;
+; 0.771  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[9]  ; clk                         ; clk         ; 0.000        ; -0.001     ; 0.922      ;
+; 0.771  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[18] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.923      ;
+; 0.772  ; debounce:counter_btn|ff[1]           ; debounce:counter_btn|counter_out[3]  ; clk                         ; clk         ; 0.000        ; -0.002     ; 0.922      ;
+; 0.772  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.924      ;
+; 0.772  ; debounce:counter_btn|counter_out[15] ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.924      ;
+; 0.772  ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[6]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 0.925      ;
+; 0.773  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.925      ;
+; 0.773  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.925      ;
+; 0.773  ; debounce:counter_btn|ff[0]           ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.925      ;
+; 0.778  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[9]  ; clk                         ; clk         ; 0.000        ; -0.001     ; 0.929      ;
+; 0.778  ; debounce:counter_btn|counter_out[11] ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.930      ;
+; 0.779  ; debounce:counter_btn|counter_out[14] ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.931      ;
+; 0.787  ; debounce:counter_btn|counter_out[16] ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.939      ;
+; 0.788  ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[1]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.940      ;
+; 0.789  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[18] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.941      ;
+; 0.790  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.942      ;
+; 0.791  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.943      ;
+; 0.791  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.943      ;
+; 0.791  ; debounce:counter_btn|counter_out[19] ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.943      ;
+; 0.796  ; debounce:counter_btn|counter_out[17] ; debounce:counter_btn|counter_out[18] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.948      ;
+; 0.807  ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[4]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.959      ;
+; 0.814  ; debounce:counter_btn|counter_out[10] ; debounce:counter_btn|counter_out[13] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.966      ;
+; 0.820  ; debounce:counter_btn|counter_out[12] ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.972      ;
+; 0.824  ; debounce:counter_btn|counter_out[3]  ; debounce:counter_btn|counter_out[6]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 0.977      ;
+; 0.827  ; debounce:counter_btn|counter_out[10] ; debounce:counter_btn|counter_out[11] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.979      ;
+; 0.827  ; debounce:counter_btn|counter_out[5]  ; debounce:counter_btn|counter_out[8]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 0.980      ;
+; 0.827  ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[4]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.979      ;
+; 0.833  ; debounce:counter_btn|counter_out[15] ; debounce:counter_btn|counter_out[19] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.985      ;
+; 0.833  ; debounce:counter_btn|counter_out[16] ; debounce:counter_btn|counter_out[18] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.985      ;
+; 0.834  ; debounce:counter_btn|counter_out[13] ; debounce:counter_btn|counter_out[17] ; clk                         ; clk         ; 0.000        ; 0.000      ; 0.986      ;
+; 0.844  ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[6]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 0.997      ;
+; 0.844  ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[8]  ; clk                         ; clk         ; 0.000        ; 0.001      ; 0.997      ;
+; 0.848  ; debounce:counter_btn|counter_out[1]  ; debounce:counter_btn|counter_out[2]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.000      ;
+; 0.848  ; debounce:counter_btn|counter_out[11] ; debounce:counter_btn|counter_out[15] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.000      ;
+; 0.854  ; debounce:counter_btn|counter_out[6]  ; debounce:counter_btn|counter_out[8]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.006      ;
+; 0.855  ; debounce:counter_btn|counter_out[12] ; debounce:counter_btn|counter_out[16] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.007      ;
+; 0.868  ; debounce:counter_btn|counter_out[12] ; debounce:counter_btn|counter_out[14] ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.020      ;
+; 0.871  ; debounce:counter_btn|counter_out[2]  ; debounce:counter_btn|counter_out[3]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.023      ;
+; 0.871  ; debounce:counter_btn|counter_out[4]  ; debounce:counter_btn|counter_out[5]  ; clk                         ; clk         ; 0.000        ; 0.000      ; 1.023      ;
++--------+--------------------------------------+--------------------------------------+-----------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'debounce:counter_btn|output'                                                                                                                         ;
++-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; Slack ; From Node                   ; To Node                     ; Launch Clock                ; Latch Clock                 ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+; 0.215 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[0] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.367      ;
+; 0.238 ; counter:counter|data_tmp[7] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.390      ;
+; 0.358 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; counter:counter|data_tmp[5] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[1] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.511      ;
+; 0.367 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[1] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.519      ;
+; 0.371 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[2] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; counter:counter|data_tmp[6] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.524      ;
+; 0.496 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; counter:counter|data_tmp[5] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.648      ;
+; 0.511 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.663      ;
+; 0.512 ; counter:counter|data_tmp[6] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.664      ;
+; 0.531 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; counter:counter|data_tmp[5] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.683      ;
+; 0.546 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.698      ;
+; 0.549 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[2] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.701      ;
+; 0.561 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[2] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.713      ;
+; 0.566 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.718      ;
+; 0.581 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.733      ;
+; 0.581 ; counter:counter|data_tmp[4] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.733      ;
+; 0.584 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.736      ;
+; 0.596 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[3] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.748      ;
+; 0.601 ; counter:counter|data_tmp[3] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.753      ;
+; 0.616 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.768      ;
+; 0.619 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.771      ;
+; 0.631 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[4] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.783      ;
+; 0.651 ; counter:counter|data_tmp[2] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.803      ;
+; 0.654 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.806      ;
+; 0.666 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[5] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.818      ;
+; 0.689 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.841      ;
+; 0.701 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[6] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.853      ;
+; 0.724 ; counter:counter|data_tmp[1] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.876      ;
+; 0.736 ; counter:counter|data_tmp[0] ; counter:counter|data_tmp[7] ; debounce:counter_btn|output ; debounce:counter_btn|output ; 0.000        ; 0.000      ; 0.888      ;
++-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                               ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[18] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[18] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[19] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[19] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|counter_out[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|counter_out[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|ff[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|ff[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|ff[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|ff[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; debounce:counter_btn|output          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; debounce:counter_btn|output          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[10]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[10]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[11]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[11]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[12]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[12]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[13]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[13]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[14]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[14]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[15]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[15]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[16]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[16]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[17]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[17]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[18]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[18]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[19]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[19]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[4]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[4]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[5]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[5]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[6]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[6]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[7]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[7]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[8]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[8]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|counter_out[9]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|counter_out[9]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|ff[0]|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|ff[0]|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|ff[1]|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|ff[1]|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter_btn|output|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter_btn|output|clk               ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'debounce:counter_btn|output'                                                                              ;
++--------+--------------+----------------+------------------+-----------------------------+------------+-------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                       ; Clock Edge ; Target                              ;
++--------+--------------+----------------+------------------+-----------------------------+------------+-------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[0]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[0]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[1]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[1]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[2]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[2]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[3]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[3]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[4]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[4]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[5]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[5]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[6]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[6]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[7]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter:counter|data_tmp[7]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter_btn|output|regout           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter_btn|output|regout           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter_btn|output~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter_btn|output~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter_btn|output~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter_btn|output~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[4]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[4]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[5]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[5]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[6]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[6]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[7]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; debounce:counter_btn|output ; Rise       ; counter|data_tmp[7]|clk             ;
++--------+--------------+----------------+------------------+-----------------------------+------------+-------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; btn       ; clk        ; 1.911 ; 1.911 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; btn       ; clk        ; -1.791 ; -1.791 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                              ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+; Data Port ; Clock Port                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference             ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+; data[*]   ; debounce:counter_btn|output ; 3.625 ; 3.625 ; Rise       ; debounce:counter_btn|output ;
+;  data[0]  ; debounce:counter_btn|output ; 3.625 ; 3.625 ; Rise       ; debounce:counter_btn|output ;
+;  data[1]  ; debounce:counter_btn|output ; 3.599 ; 3.599 ; Rise       ; debounce:counter_btn|output ;
+;  data[2]  ; debounce:counter_btn|output ; 3.469 ; 3.469 ; Rise       ; debounce:counter_btn|output ;
+;  data[3]  ; debounce:counter_btn|output ; 3.359 ; 3.359 ; Rise       ; debounce:counter_btn|output ;
+;  data[4]  ; debounce:counter_btn|output ; 3.562 ; 3.562 ; Rise       ; debounce:counter_btn|output ;
+;  data[5]  ; debounce:counter_btn|output ; 3.351 ; 3.351 ; Rise       ; debounce:counter_btn|output ;
+;  data[6]  ; debounce:counter_btn|output ; 3.349 ; 3.349 ; Rise       ; debounce:counter_btn|output ;
+;  data[7]  ; debounce:counter_btn|output ; 3.584 ; 3.584 ; Rise       ; debounce:counter_btn|output ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                      ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+; Data Port ; Clock Port                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference             ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+; data[*]   ; debounce:counter_btn|output ; 3.349 ; 3.349 ; Rise       ; debounce:counter_btn|output ;
+;  data[0]  ; debounce:counter_btn|output ; 3.625 ; 3.625 ; Rise       ; debounce:counter_btn|output ;
+;  data[1]  ; debounce:counter_btn|output ; 3.599 ; 3.599 ; Rise       ; debounce:counter_btn|output ;
+;  data[2]  ; debounce:counter_btn|output ; 3.469 ; 3.469 ; Rise       ; debounce:counter_btn|output ;
+;  data[3]  ; debounce:counter_btn|output ; 3.359 ; 3.359 ; Rise       ; debounce:counter_btn|output ;
+;  data[4]  ; debounce:counter_btn|output ; 3.562 ; 3.562 ; Rise       ; debounce:counter_btn|output ;
+;  data[5]  ; debounce:counter_btn|output ; 3.351 ; 3.351 ; Rise       ; debounce:counter_btn|output ;
+;  data[6]  ; debounce:counter_btn|output ; 3.349 ; 3.349 ; Rise       ; debounce:counter_btn|output ;
+;  data[7]  ; debounce:counter_btn|output ; 3.584 ; 3.584 ; Rise       ; debounce:counter_btn|output ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                        ;
++------------------------------+---------+--------+----------+---------+---------------------+
+; Clock                        ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------------------+---------+--------+----------+---------+---------------------+
+; Worst-case Slack             ; -2.966  ; -2.689 ; N/A      ; N/A     ; -1.631              ;
+;  clk                         ; -2.966  ; -2.689 ; N/A      ; N/A     ; -1.631              ;
+;  debounce:counter_btn|output ; -1.191  ; 0.215  ; N/A      ; N/A     ; -0.611              ;
+; Design-wide TNS              ; -54.233 ; -2.689 ; 0.0      ; 0.0     ; -39.513             ;
+;  clk                         ; -48.030 ; -2.689 ; N/A      ; N/A     ; -29.737             ;
+;  debounce:counter_btn|output ; -6.203  ; 0.000  ; N/A      ; N/A     ; -9.776              ;
++------------------------------+---------+--------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; btn       ; clk        ; 4.209 ; 4.209 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; btn       ; clk        ; -1.791 ; -1.791 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                              ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+; Data Port ; Clock Port                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference             ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+; data[*]   ; debounce:counter_btn|output ; 6.873 ; 6.873 ; Rise       ; debounce:counter_btn|output ;
+;  data[0]  ; debounce:counter_btn|output ; 6.873 ; 6.873 ; Rise       ; debounce:counter_btn|output ;
+;  data[1]  ; debounce:counter_btn|output ; 6.845 ; 6.845 ; Rise       ; debounce:counter_btn|output ;
+;  data[2]  ; debounce:counter_btn|output ; 6.504 ; 6.504 ; Rise       ; debounce:counter_btn|output ;
+;  data[3]  ; debounce:counter_btn|output ; 6.199 ; 6.199 ; Rise       ; debounce:counter_btn|output ;
+;  data[4]  ; debounce:counter_btn|output ; 6.644 ; 6.644 ; Rise       ; debounce:counter_btn|output ;
+;  data[5]  ; debounce:counter_btn|output ; 6.193 ; 6.193 ; Rise       ; debounce:counter_btn|output ;
+;  data[6]  ; debounce:counter_btn|output ; 6.190 ; 6.190 ; Rise       ; debounce:counter_btn|output ;
+;  data[7]  ; debounce:counter_btn|output ; 6.681 ; 6.681 ; Rise       ; debounce:counter_btn|output ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                      ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+; Data Port ; Clock Port                  ; Rise  ; Fall  ; Clock Edge ; Clock Reference             ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+; data[*]   ; debounce:counter_btn|output ; 3.349 ; 3.349 ; Rise       ; debounce:counter_btn|output ;
+;  data[0]  ; debounce:counter_btn|output ; 3.625 ; 3.625 ; Rise       ; debounce:counter_btn|output ;
+;  data[1]  ; debounce:counter_btn|output ; 3.599 ; 3.599 ; Rise       ; debounce:counter_btn|output ;
+;  data[2]  ; debounce:counter_btn|output ; 3.469 ; 3.469 ; Rise       ; debounce:counter_btn|output ;
+;  data[3]  ; debounce:counter_btn|output ; 3.359 ; 3.359 ; Rise       ; debounce:counter_btn|output ;
+;  data[4]  ; debounce:counter_btn|output ; 3.562 ; 3.562 ; Rise       ; debounce:counter_btn|output ;
+;  data[5]  ; debounce:counter_btn|output ; 3.351 ; 3.351 ; Rise       ; debounce:counter_btn|output ;
+;  data[6]  ; debounce:counter_btn|output ; 3.349 ; 3.349 ; Rise       ; debounce:counter_btn|output ;
+;  data[7]  ; debounce:counter_btn|output ; 3.584 ; 3.584 ; Rise       ; debounce:counter_btn|output ;
++-----------+-----------------------------+-------+-------+------------+-----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                       ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+; clk                         ; clk                         ; 350      ; 0        ; 0        ; 0        ;
+; debounce:counter_btn|output ; clk                         ; 1        ; 1        ; 0        ; 0        ;
+; debounce:counter_btn|output ; debounce:counter_btn|output ; 36       ; 0        ; 0        ; 0        ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                        ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+; From Clock                  ; To Clock                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+; clk                         ; clk                         ; 350      ; 0        ; 0        ; 0        ;
+; debounce:counter_btn|output ; clk                         ; 1        ; 1        ; 0        ; 0        ;
+; debounce:counter_btn|output ; debounce:counter_btn|output ; 36       ; 0        ; 0        ; 0        ;
++-----------------------------+-----------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 9     ; 9    ;
+; Unconstrained Output Ports      ; 8     ; 8    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon May 20 10:55:01 2019
+Info: Command: quartus_sta counterdb -c counterdb
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'counterdb.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name debounce:counter_btn|output debounce:counter_btn|output
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.966
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.966       -48.030 clk 
+    Info (332119):    -1.191        -6.203 debounce:counter_btn|output 
+Info (332146): Worst-case hold slack is -2.689
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.689        -2.689 clk 
+    Info (332119):     0.445         0.000 debounce:counter_btn|output 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -29.737 clk 
+    Info (332119):    -0.611        -9.776 debounce:counter_btn|output 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.622
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.622        -6.198 clk 
+    Info (332119):     0.144         0.000 debounce:counter_btn|output 
+Info (332146): Worst-case hold slack is -1.718
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.718        -1.718 clk 
+    Info (332119):     0.215         0.000 debounce:counter_btn|output 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -24.380 clk 
+    Info (332119):    -0.500        -8.000 debounce:counter_btn|output 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 389 megabytes
+    Info: Processing ended: Mon May 20 10:55:02 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

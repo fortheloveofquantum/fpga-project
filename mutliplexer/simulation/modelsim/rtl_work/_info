@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\mcankaraman\Desktop\fpga\Fpga Project\mutliplexer\simulation\modelsim
+Emultiplexer
+Z1 w1554552394
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\mcankaraman\Desktop\fpga\Fpga Project\mutliplexer\simulation\modelsim
+Z5 8C:/Users/mcankaraman/Desktop/fpga/Fpga Project/mutliplexer/multiplexer.vhd
+Z6 FC:/Users/mcankaraman/Desktop/fpga/Fpga Project/mutliplexer/multiplexer.vhd
+l0
+L4
+VjNPgc5CHRkOoYY@njzmlb2
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1554558928.303000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/mcankaraman/Desktop/fpga/Fpga Project/mutliplexer/multiplexer.vhd|
+Z10 !s107 C:/Users/mcankaraman/Desktop/fpga/Fpga Project/mutliplexer/multiplexer.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 iL89O2DV2KNB>k8h:O7iz2
+!i10b 1
+Abhv
+R2
+R3
+DEx4 work 11 multiplexer 0 22 jNPgc5CHRkOoYY@njzmlb2
+l13
+L12
+VZE:5S_If>oEe8Wj3D16eh1
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 =BD758mXX`^05T@DXa6_I0
+!i10b 1
+Etest_mux
+Z13 w1554553521
+R2
+R3
+R4
+Z14 8C:/Users/mcankaraman/Desktop/fpga/Fpga Project/mutliplexer/test_mux.vhd
+Z15 FC:/Users/mcankaraman/Desktop/fpga/Fpga Project/mutliplexer/test_mux.vhd
+l0
+L4
+V8e]mMTjYa:fRgOWa=`Y313
+!s100 j:>L[CSJGe2az>Xc84aT?2
+R7
+31
+!i10b 1
+Z16 !s108 1554558928.396000
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/mcankaraman/Desktop/fpga/Fpga Project/mutliplexer/test_mux.vhd|
+Z18 !s107 C:/Users/mcankaraman/Desktop/fpga/Fpga Project/mutliplexer/test_mux.vhd|
+R11
+R12
+Abeh
+R2
+R3
+DEx4 work 8 test_mux 0 22 8e]mMTjYa:fRgOWa=`Y313
+l26
+L7
+V=K63UbPJKgW0T9Ud_GH<22
+!s100 :9FfE``?h[BJ9?aSc6zRV3
+R7
+31
+!i10b 1
+R16
+R17
+R18
+R11
+R12

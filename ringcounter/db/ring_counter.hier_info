@@ -1,0 +1,15 @@
+|ring_counter
+clk => q_tmp[0].CLK
+clk => q_tmp[1].CLK
+clk => q_tmp[2].CLK
+clk => q_tmp[3].CLK
+reset => q_tmp[0].PRESET
+reset => q_tmp[1].ACLR
+reset => q_tmp[2].ACLR
+reset => q_tmp[3].ACLR
+q[0] <= q_tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q_tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

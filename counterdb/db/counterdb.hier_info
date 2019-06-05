@@ -1,0 +1,69 @@
+|counterdb
+clk => debounce:counter_btn.clk
+btn => debounce:counter_btn.input
+reset => counter:counter.reset
+data[0] <= counter:counter.data[0]
+data[1] <= counter:counter.data[1]
+data[2] <= counter:counter.data[2]
+data[3] <= counter:counter.data[3]
+data[4] <= counter:counter.data[4]
+data[5] <= counter:counter.data[5]
+data[6] <= counter:counter.data[6]
+data[7] <= counter:counter.data[7]
+
+
+|counterdb|debounce:counter_btn
+clk => output~reg0.CLK
+clk => counter_out[0].CLK
+clk => counter_out[1].CLK
+clk => counter_out[2].CLK
+clk => counter_out[3].CLK
+clk => counter_out[4].CLK
+clk => counter_out[5].CLK
+clk => counter_out[6].CLK
+clk => counter_out[7].CLK
+clk => counter_out[8].CLK
+clk => counter_out[9].CLK
+clk => counter_out[10].CLK
+clk => counter_out[11].CLK
+clk => counter_out[12].CLK
+clk => counter_out[13].CLK
+clk => counter_out[14].CLK
+clk => counter_out[15].CLK
+clk => counter_out[16].CLK
+clk => counter_out[17].CLK
+clk => counter_out[18].CLK
+clk => counter_out[19].CLK
+clk => ff[0].CLK
+clk => ff[1].CLK
+input => ff[0].DATAIN
+output <= output~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counterdb|counter:counter
+clk => data_tmp[0].CLK
+clk => data_tmp[1].CLK
+clk => data_tmp[2].CLK
+clk => data_tmp[3].CLK
+clk => data_tmp[4].CLK
+clk => data_tmp[5].CLK
+clk => data_tmp[6].CLK
+clk => data_tmp[7].CLK
+reset => data_tmp[0].ACLR
+reset => data_tmp[1].ACLR
+reset => data_tmp[2].ACLR
+reset => data_tmp[3].ACLR
+reset => data_tmp[4].ACLR
+reset => data_tmp[5].ACLR
+reset => data_tmp[6].ACLR
+reset => data_tmp[7].ACLR
+data[0] <= data_tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data_tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data_tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data_tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data_tmp[4].DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data_tmp[5].DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data_tmp[6].DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data_tmp[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,13 @@
+|sr_ff
+s => process_0.IN0
+s => process_0.IN0
+s => process_0.IN0
+r => process_0.IN1
+r => process_0.IN1
+r => process_0.IN1
+clk => tmp.CLK
+clk => tmp~en.CLK
+q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+q_bar <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+

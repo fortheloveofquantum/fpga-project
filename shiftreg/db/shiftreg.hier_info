@@ -1,0 +1,16 @@
+|shiftreg
+clk => reg[0].CLK
+clk => reg[1].CLK
+clk => reg[2].CLK
+clk => reg[3].CLK
+clear => reg[0].ENA
+clear => reg[3].ENA
+clear => reg[2].ENA
+clear => reg[1].ENA
+d_in => reg[0].DATAIN
+d_out[0] <= reg[0].DB_MAX_OUTPUT_PORT_TYPE
+d_out[1] <= reg[1].DB_MAX_OUTPUT_PORT_TYPE
+d_out[2] <= reg[2].DB_MAX_OUTPUT_PORT_TYPE
+d_out[3] <= reg[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

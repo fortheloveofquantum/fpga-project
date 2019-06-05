@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\mcankaraman\Desktop\fpga\Fpga Project\decoder\simulation\modelsim
+Edecoder
+Z1 w1554575832
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\mcankaraman\Desktop\fpga\Fpga Project\decoder\simulation\modelsim
+Z5 8C:/Users/mcankaraman/Desktop/fpga/Fpga Project/decoder/decoder.vhd
+Z6 FC:/Users/mcankaraman/Desktop/fpga/Fpga Project/decoder/decoder.vhd
+l0
+L4
+VDScH_S7AnS<lfkb49_D?T2
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1554638599.464000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/mcankaraman/Desktop/fpga/Fpga Project/decoder/decoder.vhd|
+Z10 !s107 C:/Users/mcankaraman/Desktop/fpga/Fpga Project/decoder/decoder.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 X05BWQUm6lWBmzh]LAkne2
+!i10b 1
+Abeh
+R2
+R3
+DEx4 work 7 decoder 0 22 DScH_S7AnS<lfkb49_D?T2
+l11
+L10
+VkE>]a7]Egg07MeSjlm4;I3
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 5>XZ2bDiI6CLG_`X_`Vn=3
+!i10b 1
+Etb_decoder
+Z13 w1554576224
+R2
+R3
+R4
+Z14 8C:/Users/mcankaraman/Desktop/fpga/Fpga Project/decoder/tb_decoder.vhd
+Z15 FC:/Users/mcankaraman/Desktop/fpga/Fpga Project/decoder/tb_decoder.vhd
+l0
+L4
+Vk`RE>9QbMADT`>G;QfQW53
+!s100 1Km[aWz3I@<BnNXeIZYl33
+R7
+31
+!i10b 1
+Z16 !s108 1554638599.573000
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/mcankaraman/Desktop/fpga/Fpga Project/decoder/tb_decoder.vhd|
+Z18 !s107 C:/Users/mcankaraman/Desktop/fpga/Fpga Project/decoder/tb_decoder.vhd|
+R11
+R12
+Abeh
+R2
+R3
+DEx4 work 10 tb_decoder 0 22 k`RE>9QbMADT`>G;QfQW53
+l16
+L7
+V1IjT1E_20k>03HTKB=RI82
+!s100 bQ67`=c01lmk95C61iBW81
+R7
+31
+!i10b 1
+R16
+R17
+R18
+R11
+R12
